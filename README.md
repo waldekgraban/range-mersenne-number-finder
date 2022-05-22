@@ -8,7 +8,7 @@ To run the script locally in the linux system, just run it on any port:
 then enter the indicated local address in the web browser.
 
 
-In order to set the number range of interest to us, complete the variables `$start` and `$stop` in the `MersenneNumberFinder` class
+In order to set the number range of interest to us, complete the variables `$start` and `$stop` in the `MersenneNumberFinder` class:
 
 ```
 $start =  2;
