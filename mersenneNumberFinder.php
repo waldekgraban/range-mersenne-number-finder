@@ -40,7 +40,7 @@ class MersenneNumberFinder
             : $errorsHandler;
     }
 
-    private function displayErrors()
+    private function displayErrors(): void
     {
         foreach ($this->rangeNumbersValidate() as $key => $value) {
             echo $value . '<br>';
