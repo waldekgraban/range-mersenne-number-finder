@@ -24,6 +24,9 @@ The mersenne numbers found in the specified range then appear on the screen.
 Example:
 `3 7 15 31 63 127 255 511 1023 2047 4095 8191`
 
-In case you want to search among a large range of numbers, it is worth uncommenting this line of code.  
+In case you want to search among a large range of numbers, it is worth uncommenting this line of code:
+```
+//ini_set('max_execution_time', '0');
+```
 
 This removes the default php script execution time limit (30 seconds).
