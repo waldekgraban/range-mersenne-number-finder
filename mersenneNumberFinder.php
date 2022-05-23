@@ -9,13 +9,13 @@ class MersenneNumberFinder
 
     public function __construct(array $rangeOfNumbers)
     {
-        $this->startNumber = (int) $rangeOfNumbers["start"];
-        $this->stopNumber = (int) $rangeOfNumbers["stop"];
-
         if(!empty($this->rangeNumbersValidate())){
             $this->displayErrors();
             die;
         }
+        
+        $this->startNumber = (int) $rangeOfNumbers["start"];
+        $this->stopNumber = (int) $rangeOfNumbers["stop"];
     }
 
     private function rangeNumbersValidate(): array
