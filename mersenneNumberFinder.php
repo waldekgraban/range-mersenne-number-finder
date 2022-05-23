@@ -27,7 +27,7 @@ class MersenneNumberFinder
         if((int) $rangeOfNumbers["start"] >= self::MIN_STARTING_NUMBER){
             $checkPoints + 1;
         } else {
-            $errorsHandler[] = 'The starting number cannot be smaller than 2';
+            $errorsHandler[] = 'The starting number cannot be smaller than ' . self::MIN_STARTING_NUMBER;
         }
 
         if((int) $rangeOfNumbers["stop"] > (int) $rangeOfNumbers["start"]){
