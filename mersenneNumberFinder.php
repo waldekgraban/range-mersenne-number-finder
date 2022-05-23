@@ -5,7 +5,8 @@
 class MersenneNumberFinder
 {
     public $rangeOfNumbers;
-    public const VALIDATOR_CHECKPOINTS = 2;
+    protected const VALIDATOR_CHECKPOINTS = 2;
+    protected const MIN_STARTING_NUMBER = 2;
 
     public function __construct(array $rangeOfNumbers)
     {
@@ -23,7 +24,7 @@ class MersenneNumberFinder
         $checkPoints = 0;
         $errorsHandler = [];
 
-        if((int) $rangeOfNumbers["start"] >= 2){
+        if((int) $rangeOfNumbers["start"] >= self::MIN_STARTING_NUMBER){
             $checkPoints + 1;
         } else {
             $errorsHandler[] = 'The starting number cannot be smaller than 2';
