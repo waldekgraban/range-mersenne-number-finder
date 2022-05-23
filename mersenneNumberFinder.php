@@ -9,7 +9,7 @@ class MersenneNumberFinder
 
     public function __construct(array $rangeOfNumbers)
     {
-        if(!empty($this->rangeNumbersValidate())){
+        if(!empty($this->rangeNumbersValidate($rangeOfNumbers))){
             $this->displayErrors();
             die;
         }
@@ -18,18 +18,18 @@ class MersenneNumberFinder
         $this->stopNumber = (int) $rangeOfNumbers["stop"];
     }
 
-    private function rangeNumbersValidate(): array
+    private function rangeNumbersValidate(array $rangeOfNumbers): array
     {
         $checkPoints = 0;
         $errorsHandler = [];
 
-        if($this->startNumber >= 2){
+        if((int) $rangeOfNumbers["start"] >= 2){
             $checkPoints + 1;
         } else {
             $errorsHandler[] = 'The starting number cannot be smaller than 2';
         }
 
-        if($this->stopNumber > $this->startNumber){
+        if((int) $rangeOfNumbers["stop"] > (int) $rangeOfNumbers["start"]){
             $checkPoints + 1;
         } else {
             $errorsHandler[] = 'The ending number cannot be less than or equal to the starting number';
@@ -94,4 +94,3 @@ $rangeOfNumbers = [
 
 $finder = new MersenneNumberFinder($rangeOfNumbers);
 $finder->listOfMersenneNumber();
-
