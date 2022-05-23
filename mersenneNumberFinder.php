@@ -48,12 +48,12 @@ class MersenneNumberFinder
         }
     }
 
-    public function listOfMersenneNumber()
+    public function listOfMersenneNumber(): string
     {
         $primeNumber = array_fill($this->startNumber, ($this->stopNumber - $this->startNumber) + 1, true);
 
         $this->sieveOfEratosthenes($primeNumber);
-
+		
         $start = 2;
         $num = (1 << $start) - 1;
         while ($num <= $this->stopNumber)
@@ -67,7 +67,7 @@ class MersenneNumberFinder
         }
     }
 
-    private function sieveOfEratosthenes(&$primeNumber): void
+    private function sieveOfEratosthenes(array &$primeNumber): void
     {
         $prime[0] = false;
         $prime[1] = false;
