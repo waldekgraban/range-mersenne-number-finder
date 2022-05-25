@@ -10,9 +10,9 @@ class MersenneNumberFinder
 
     public function __construct(array $rangeOfNumbers)
     {
-        if(!empty($this->rangeNumbersValidate($rangeOfNumbers))){
+        if($this->isRangeNumbersValidate($rangeOfNumbers)){
             $this->displayErrors();
-            die;
+            $this->stopScript();
         }
         
         $this->startNumber = (int) $rangeOfNumbers["start"];
@@ -48,7 +48,17 @@ class MersenneNumberFinder
         }
     }
 
-    public function listOfMersenneNumber(): string
+    private function stopScript(): void
+    {
+        exit(); 
+    }
+	
+    private function isRangeNumbersValidate($rangeOfNumbers): bool
+    {
+        return !empty($this->rangeNumbersValidate($rangeOfNumbers));
+    }
+
+    public function listOfMersenneNumber(): void
     {
         $primeNumber = array_fill($this->startNumber, ($this->stopNumber - $this->startNumber) + 1, true);
 
@@ -74,7 +84,7 @@ class MersenneNumberFinder
         
         for ($i = 2; $i * $i <= $this->stopNumber; ++$i)
         {
-            if ($prime[$i])
+            if (isset($prime[$i]))
             {
                 for ($j = $i * $i; $j <= $this->stopNumber; $j += $i)
                 {
