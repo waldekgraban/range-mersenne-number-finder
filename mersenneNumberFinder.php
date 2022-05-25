@@ -1,4 +1,10 @@
 <?php
+/*
+ *
+ * Created by Waldemar Graban 2019
+ *
+ */
+
 //ini_set('max_execution_time', '300'); //300 seconds = 5 minutes
 //ini_set('max_execution_time', '0'); // for infinite time of execution 
 
