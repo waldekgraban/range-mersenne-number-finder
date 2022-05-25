@@ -11,7 +11,7 @@ class MersenneNumberFinder
     public function __construct(array $rangeOfNumbers)
     {
         if($this->isRangeNumbersValidate($rangeOfNumbers)){
-            $this->displayErrors();
+            $this->displayErrors($rangeOfNumbers);
             $this->stopScript();
         }
         
@@ -41,9 +41,9 @@ class MersenneNumberFinder
             : $errorsHandler;
     }
 
-    private function displayErrors(): void
+    private function displayErrors(array $rangeOfNumbers): void
     {
-        foreach ($this->rangeNumbersValidate() as $key => $value) {
+        foreach ($this->rangeNumbersValidate($rangeOfNumbers) as $key => $value) {
             echo $value . '<br>';
         }
     }
@@ -68,7 +68,7 @@ class MersenneNumberFinder
         $num = (1 << $start) - 1;
         while ($num <= $this->stopNumber)
         {
-            if ($primeNumber[$num])
+            if (isset($primeNumber[$num]))
             {
                 printf("%d\n",$num);
             }
@@ -95,7 +95,7 @@ class MersenneNumberFinder
     }
 }
 
-$start = 2;
+$start = 999;
 $stop = 9999;
 
 $rangeOfNumbers = [
