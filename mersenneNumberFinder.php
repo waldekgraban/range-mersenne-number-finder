@@ -95,7 +95,7 @@ class MersenneNumberFinder
     }
 }
 
-$start = 999;
+$start = 2;
 $stop = 9999;
 
 $rangeOfNumbers = [
