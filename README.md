@@ -15,8 +15,8 @@ $start =  2;
 $stop =  9999;
 
 $rangeOfNumbers = [
-	'start'  => $start,
-	'stop'  => $stop
+    'start'  => $start,
+    'stop'  => $stop
 ];
 ```
 The mersenne numbers found in the specified range then appear on the screen.
